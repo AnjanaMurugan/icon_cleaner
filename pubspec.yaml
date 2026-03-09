@@ -1,7 +1,7 @@
 name: icon_cleaner
 version: 1.0.6
-description: Removes emoji characters from Flutter Dart files.
-homepage: https://github.com/yourusername/icon_cleaner
+description: A Dart CLI tool that automatically removes emoji and non-ASCII characters from Flutter project Dart files. Useful for cleaning up code copied from AI tools like ChatGPT.
+homepage: https://github.com/AnjanaMurugan/icon_cleaner
 
 environment:
   sdk: ^3.0.0

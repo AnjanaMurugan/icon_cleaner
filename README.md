@@ -1,85 +1,41 @@
-# 🧹 icon_cleaner
+# icon_cleaner
 
-A Dart CLI tool to automatically remove **emoji characters** (❌ ✅ 🧹 and all non-ASCII symbols) from your Flutter `.dart` files.
+A Dart CLI tool that automatically removes emoji and non-ASCII characters from Flutter project Dart files. Useful for cleaning up code copied from AI tools like ChatGPT.
 
-When you copy code from ChatGPT responses, it often includes emoji characters in `print()`, `log()`, and `Text()` calls that cause issues with App Store submissions and code reviews. This tool removes them automatically in one command.
-
----
-
-## 📦 Install
-
+## Install
 ```bash
 dart pub global activate icon_cleaner
 ```
 
----
-
-## 🚀 Usage
-
-### Basic — clean your lib folder
+## Usage
 ```bash
 icon_cleaner --path lib/
-```
-
-### Preview first (dry run — no changes made)
-```bash
 icon_cleaner --path lib/ --dry-run
-```
-
-### Full options
-```bash
 icon_cleaner --help
 ```
 
----
+## What It Removes
 
-## 🎯 What It Removes
+All non-ASCII emoji characters from .dart files.
 
-All non-ASCII emoji characters from `.dart` files, for example:
-
-| Before | After |
-|--------|-------|
-| `print('❌ Error occurred')` | `print(' Error occurred')` |
-| `print('✅ Success')` | `print(' Success')` |
-| `log('🧹 Cleaning done')` | `log(' Cleaning done')` |
-| `Text('📊 Results')` | `Text(' Results')` |
-
----
-
-## 📋 Example Output
-
+## Example Output
 ```
-icon_cleaner --path lib/
-
 Files scanned : 24
 Files cleaned : 6
 Done! All emoji characters removed successfully.
 ```
 
----
-
-## 🔧 Programmatic Usage
-
-Use as a library in your own Dart code:
-
+## Programmatic Usage
 ```dart
 import 'package:icon_cleaner/icon_cleaner.dart';
 
 void main() {
-  // Remove emojis from a single string
-  final clean = stripEmojis('Hello ❌ World ✅');
-  print(clean); // Hello  World 
-
-  // Clean a single file
+  final clean = stripEmojis('Hello World');
   cleanFile('lib/screens/chat_screen.dart');
-
-  // Clean entire directory
   cleanDirectory('lib/');
 }
 ```
 
----
+## License
 
-## 📄 License
-
-MIT License# icon_cleaner
+MIT
